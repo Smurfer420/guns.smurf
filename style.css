@@ -1,0 +1,174 @@
+:root {
+  /* color tokens */
+  /*  background-image: url("assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%; */
+  --card: rgba(255, 255, 255, 0.03);
+  --card-strong: rgba(255, 255, 255, 0.06);
+  --text: #e9eef6;
+  --shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* page layout */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #071018 0%, var(--bg) 100%);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* center the demo box */
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+/* The centered box where you put text/content. */
+.center-box {
+  position: relative; /* for the pseudo-element */
+  z-index: 1; /* keep content above the blur */
+  width: min(600px, 92%);
+  max-width: 600px;
+  padding: 2.25rem 2.5rem;
+  border-radius: 20px;
+  color: var(--text);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.02)
+  );
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  overflow: visible;
+  align-items: center;
+  text-align: center;
+}
+
+/* The softly-blurred edge effect. This pseudo-element is larger than the box,
+   blurred, and masked with a radial gradient so the blur fades out slowly. */
+.center-box::before {
+  content: "";
+  position: absolute;
+  inset: -40px; /* how far the blur extends outside the box */
+  z-index: 0;
+  border-radius: inherit;
+
+  /* Use a subtle light overlay to make the blur visible on dark backgrounds. */
+  background: radial-gradient(
+    120% 100% at 50% 50%,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02) 40%,
+    transparent 70%
+  );
+
+  /* apply blur to the pseudo-element */
+  filter: blur(28px);
+
+  /* mask so the blurred layer fades out slowly toward the edges */
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 45%,
+    rgba(0, 0, 0, 0.6) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 1) 45%,
+    rgba(0, 0, 0, 0.6) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* small typographic niceties inside the box */
+.center-box h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.6rem;
+  line-height: 1.1;
+}
+.center-box p {
+  margin: 0;
+  color: rgba(233, 238, 246, 0.9);
+  opacity: 0.95;
+}
+
+/* responsive tweaks */
+@media (max-width: 520px) {
+  .center-box {
+    padding: 1.25rem 1rem;
+    border-radius: 14px;
+  }
+  .center-box::before {
+    inset: -28px;
+    filter: blur(20px);
+  }
+}
+
+.glow1 {
+  font-size: 60px;
+  color: #000000;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.glow2 {
+  font-size: 25px;
+  color: #000000;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff,
+      0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff,
+      0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff, 0 0 80px #ffffff;
+  }
+}
+
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#bg_anim {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
