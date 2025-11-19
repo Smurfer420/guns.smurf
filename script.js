@@ -1,6 +1,4 @@
 function _copyText() {
-  // Resolve the audio path relative to the loaded script file so this works
-  // from subfolders (select-Page/, Staff-Experience/, etc.)
   const scriptEl =
     document.currentScript ||
     (function () {
@@ -14,7 +12,6 @@ function _copyText() {
     : "assets/ding.mp3";
 
   const sound = new Audio(audioPath);
-  // play() can reject if the browser blocks it; ignore that error silently
   sound.play().catch(() => {});
 
   navigator.clipboard.writeText("Smurfer420");

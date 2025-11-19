@@ -1,15 +1,10 @@
 :root {
-  /* color tokens */
-  /*  background-image: url("assets/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 100%; */
   --card: rgba(255, 255, 255, 0.03);
   --card-strong: rgba(255, 255, 255, 0.06);
   --text: #e9eef6;
   --shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* page layout */
 html,
 body {
   height: 100%;
@@ -23,16 +18,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* center the demo box */
   display: grid;
   place-items: center;
   min-height: 100vh;
 }
 
-/* The centered box where you put text/content. */
 .center-box {
-  position: relative; /* for the pseudo-element */
-  z-index: 1; /* keep content above the blur */
+  position: relative;
+  z-index: 1;
   width: min(600px, 92%);
   max-width: 600px;
   padding: 2.25rem 2.5rem;
@@ -50,17 +43,13 @@ body {
   align-items: center;
   text-align: center;
 }
-
-/* The softly-blurred edge effect. This pseudo-element is larger than the box,
-   blurred, and masked with a radial gradient so the blur fades out slowly. */
 .center-box::before {
   content: "";
   position: absolute;
-  inset: -40px; /* how far the blur extends outside the box */
+  inset: -40px;
   z-index: 0;
   border-radius: inherit;
 
-  /* Use a subtle light overlay to make the blur visible on dark backgrounds. */
   background: radial-gradient(
     120% 100% at 50% 50%,
     rgba(255, 255, 255, 0.06),
@@ -68,10 +57,8 @@ body {
     transparent 70%
   );
 
-  /* apply blur to the pseudo-element */
   filter: blur(28px);
 
-  /* mask so the blurred layer fades out slowly toward the edges */
   -webkit-mask-image: radial-gradient(
     circle at center,
     rgba(0, 0, 0, 1) 45%,
@@ -88,7 +75,6 @@ body {
   pointer-events: none;
 }
 
-/* small typographic niceties inside the box */
 .center-box h1 {
   margin: 0 0 0.5rem 0;
   font-size: 1.6rem;
