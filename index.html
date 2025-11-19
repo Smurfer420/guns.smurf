@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="style.css" />
-    <!--<script src="script.js"></script>-->
+    <script src="script.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smurfer - 420</title>
@@ -24,12 +24,17 @@
         creator, and moderator. if you want to find more about me, check out
         <a href="https://smurfer420.github.io/Me">This link</a>
       </p>
-      <img
-        src="assets/discord.png"
-        alt="discord logo"
-        width="75"
-        style="margin-bottom: -50px"
-      />
+      <div class="copy-wrapper">
+        <img
+          class="discord_copy"
+          src="assets/discord.png"
+          alt="discord logo"
+          width="75"
+          style="margin-bottom: -50px"
+          onclick="_copyText()"
+        />
+        <div id="copy-popup" class="copy-popup glow2">Copied Discord User!</div>
+      </div>
     </div>
     <!--    <p style="color: black" class="glow2">
       ToDo: Make it animated. add discord, and staffing experience

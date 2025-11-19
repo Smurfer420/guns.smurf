@@ -172,3 +172,32 @@ a:active {
   width: 100vw;
   object-fit: cover;
 }
+
+.copy-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.copy_img {
+  cursor: pointer;
+}
+
+.copy-popup {
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 60, 255, 0.35),
+    rgba(211, 0, 253, 0.35)
+  );
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1 ease-in-out;
+}
