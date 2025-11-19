@@ -132,17 +132,17 @@ body {
 
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff,
-      0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.85),
+      0 0 12px rgba(255, 255, 255, 0.6), 0 0 18px rgba(255, 255, 255, 0.35);
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #ffffff, 0 0 40px #ffffff,
-      0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff, 0 0 80px #ffffff;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9),
+      0 0 18px rgba(255, 255, 255, 0.55), 0 0 26px rgba(255, 255, 255, 0.25);
   }
 }
 
 a:link {
-  color: green;
+  color: pink;
   background-color: transparent;
   text-decoration: none;
 }
@@ -154,13 +154,13 @@ a:visited {
 }
 
 a:hover {
-  color: red;
+  color: pink;
   background-color: transparent;
   text-decoration: underline;
 }
 
 a:active {
-  color: yellow;
+  color: pink;
   background-color: transparent;
   text-decoration: underline;
 }
