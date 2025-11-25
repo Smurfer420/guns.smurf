@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smurfer - 420</title>
+  </head>
+  <body>
+    <div class="quality-toggle">
+      <button id="quality-btn" title="Toggle between image and video">
+        🎬 Video
+      </button>
+    </div>
+    <img id="bg_image" src="assets/bg.jpg" alt="Background" class="bg-media" />
+    <video
+      autoplay
+      muted
+      loop
+      id="bg_video"
+      class="bg-media"
+      style="display: none"
+    >
+      <source src="assets/wp-2.mp4" type="video/mp4" />
+    </video>
+    <div class="center-box" role="region" aria-label="Central content box">
+      <img
+        style="border-radius: 50%"
+        src="assets/pfp.png"
+        alt="Smurfer PFP"
+        width="125px"
+      />
+      <p style="color: black" class="glow1">Smurfer</p>
+      <p style="color: black" class="glow2">
+        Hello there, my name is Smurfer, and i am a developer, minecraft server
+        creator, and moderator. if you want to find more about me, check out
+        <a href="select-Page/">This link</a>
+      </p>
+      <div class="copy-wrapper">
+        <img
+          class="discord_copy"
+          src="assets/discord.png"
+          alt="discord logo"
+          width="75"
+          style="margin-bottom: -50px"
+          onclick="_copyText()"
+        />
+        <div id="copy-popup" class="copy-popup glow2">Copied Discord User!</div>
+      </div>
+      <p
+        style="
+          position: fixed;
+          right: 10px;
+          bottom: 10px;
+          font-size: 10px;
+          opacity: 0.45;
+        "
+        id="version"
+      >
+        Version
+      </p>
+    </div>
+  </body>
+</html>
