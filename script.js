@@ -1,7 +1,9 @@
+let version = "1.4.1";
+
 document.addEventListener("DOMContentLoaded", function () {
   // Set version
   const versionText = document.getElementById("version");
-  versionText.innerText = "1.4";
+  versionText.innerText = version;
 
   // Quality toggle functionality
   const qualityBtn = document.getElementById("quality-btn");
